@@ -25,12 +25,13 @@ function getWeather(city, requestDate) {
                 let location = response['data']['request'][0];
                 let conditions = response['data']['current_condition'][0];
                 let currentConditions = conditions['weatherDesc'][0]['value'];
+                const forecastDate = moment(forecast['date']).format('dddd MMMM Do YYYY');
                 // Create response
                 let output = `Current conditions in the ${location['type']} 
-        ${location['query']} are ${currentConditions} with a projected high of
-        ${forecast['maxtempC']}°C or ${forecast['maxtempF']}°F and a low of 
-        ${forecast['mintempC']}°C or ${forecast['mintempF']}°F on 
-        ${forecast['date']}.`;
+        ${location['query']} are. ${currentConditions} with a projected high of
+        ${forecast['maxtempC']}°C and a low of 
+        ${forecast['mintempC']}°C on 
+        ${forecastDate}.`;
                 // Resolve the promise with the output text
                 console.log(output);
                 resolve(output);
