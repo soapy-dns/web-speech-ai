@@ -24,5 +24,14 @@ You need your API.ai API key (as an env var).
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/girliemac/web-speech-ai)
 
+###1
+/Users/neilsoutar/Ideaprojects/web-speech-ai/node_modules/apiai/module/apiai.js:73
+        throw new Error('\'clientAccessToken\' cannot be empty.');
+        ^
+
+Error: 'clientAccessToken' cannot be empty.
+
+Answer: You didn't get / set the api token from API.ai
+
 
 
