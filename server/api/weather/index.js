@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
     weatherService.getWeather(city, forecastDate).then((result) => {
         // // Return the results of the weather API to API.AI
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({ 'speech': output, 'displayText': output }));
+        res.send(JSON.stringify({ 'speech': result, 'displayText': result }));
         res.json({ 'speech': result, 'displayText': result });
 
     }).catch(err => {
