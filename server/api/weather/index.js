@@ -5,7 +5,7 @@ const weatherService = require('../../service/weather');
 
 
 router.post('/', (req, res) => {
-    console.log('api call to get weather')
+    console.log('api call to get weather', req.body)
     // Get the city and date from the request
     // console.log('request body', req.body)
     const city = req.body.result.parameters['geo-city']; // city is a required param
