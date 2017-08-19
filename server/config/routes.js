@@ -14,6 +14,6 @@ router.use('/api/weather', require('../api/weather'));
 
 
 // not found catch all
-router.use('/', (req, res) => { res.status(404).end(); });
+// router.use('/', (req, res) => { res.status(404).end(); });
 
 module.exports = router;

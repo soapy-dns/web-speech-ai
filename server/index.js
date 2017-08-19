@@ -6,12 +6,12 @@ const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
 const express = require('express');
 const app = express();
 
-app.use(express.static(__dirname + '/views')); // html
-app.use(express.static(__dirname + '/public')); // js, css, images
+app.use(express.static(__dirname + '/../views')); // html
+app.use(express.static(__dirname + '/../public')); // js, css, images
 app.use(require('./config/routes.js'));
 
-
 const server = app.listen(process.env.PORT || 5000, () => {
+  console.log('server.address', server.address())
   console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
 
