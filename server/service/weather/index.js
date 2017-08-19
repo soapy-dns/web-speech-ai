@@ -1,5 +1,6 @@
 'use strict';
-const http = require('http')
+const http = require('http');
+const moment = require('moment');
 
 function getWeather(city, requestDate) {
     return new Promise((resolve, reject) => {
