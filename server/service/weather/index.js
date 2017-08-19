@@ -7,7 +7,8 @@ function getWeather(city, requestDate) {
         // resolve(weather);
         const host = 'api.worldweatheronline.com';
         const wwoApiKey = process.env.WEATHER_API_KEY;
-        requestDate = '20-08-2017';
+        // requestDate = '20-08-2017';
+        const requestCity = city || 'Sydney';  // todo request city
         // Create the path for the HTTP request to get the weather
         let path = '/premium/v1/weather.ashx?format=json&num_of_days=1' +
             '&q=' + encodeURIComponent(city) + '&key=' + wwoApiKey + '&date=' + requestDate;

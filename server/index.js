@@ -4,6 +4,7 @@ const APIAI_TOKEN = process.env.APIAI_TOKEN;
 const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
 
 const express = require('express');
+const auth = require('basic-auth');
 const app = express();
 app.use(require('body-parser').json());
 
@@ -12,7 +13,6 @@ app.use(express.static(__dirname + '/../public')); // js, css, images
 app.use(require('./config/routes.js'));
 
 const server = app.listen(process.env.PORT || 5000, () => {
-  console.log('server.address', server.address())
   console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
 
@@ -24,9 +24,10 @@ io.on('connection', function(socket){
 const apiai = require('apiai')(APIAI_TOKEN);
 
 // Web UI
-app.get('/', (req, res) => {
-  res.sendFile('index.html');
-});
+// app.get('/', (req, res) => {
+//   console.log('send file index.html')
+//   res.sendFile('index.html');
+// });
 
 io.on('connection', function(socket) {
   socket.on('chat message', (text) => {

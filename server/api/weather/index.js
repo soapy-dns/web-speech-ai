@@ -5,21 +5,22 @@ const weatherService = require('../../service/weather');
 
 
 router.post('/', (req, res) => {
+    console.log('api call to get weather')
     // Get the city and date from the request
-    console.log('request body', req.body)
+    // console.log('request body', req.body)
     // let city = req.body.result.parameters['geo-city']; // city is a required param
-    // console.log('city', city)
+    // console.log('=city=', city)
     // //
     // // // Get the date for the weather forecast (if present)
     // // let forecastDate = '';
     // if (req.body.result.parameters['date']) {
     //     date = req.body.result.parameters['date'];
-    //     console.log('Date: ' + date);
+    //     console.log('=Date= ' + date);
     // }
     const city = 'Dundee';
     const date = moment().format('dddd MMMM Do YYYY');
 
-    const result = `City = ${city}, and date = ${date}`;
+    const result = `City = ${city || 'dont know'}, and date = ${date || 'dont know'}`;
     res.json({ 'speech': result, 'displayText': result });
 
     // const city = 'Dundee';
